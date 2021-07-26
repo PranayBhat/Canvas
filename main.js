@@ -1,7 +1,11 @@
-var start="no";
-function Start (){start="yes";
-document.getElementById("start_button").style.display="none";
+
+function Start(){document.getElementById("start_button").style.display="none";
 document.getElementById("clear_button").style.display="inline-block";
+document.getElementById("firstCanvas").style.display="inline-block";
+document.getElementById("secondCanvas").style.display="inline-block";
+document.getElementById("thirdCanvas").style.display="inline-block";
+
+
 }
 
     canvas=document.getElementById("firstCanvas");
@@ -24,7 +28,7 @@ document.getElementById("clear_button").style.display="inline-block";
     function my_notepadlick2(e){ color2 = document.getElementById("color2").value;
     console.log(color2);
     touchpadlick_x2 = e.clientX- canvas2.offsetLeft;
-    touchpadlick_y2 = 480-e.clientY;
+    touchpadlick_y2=e.clientY-140;
     squre(touchpadlick_x2,touchpadlick_y2);}
     function squre(touchpadlick_x2,touchpadlick_y2)
     {ctx2.beginPath(); 
@@ -39,19 +43,19 @@ document.getElementById("clear_button").style.display="inline-block";
     function my_notepadlick3(e){ color3 = document.getElementById("color3").value;
     console.log(color3);
     touchpadlick_x3 = e.clientX - canvas3.offsetLeft;
-    touchpadlick_y3 =  800-e.clientY;
-    rectrangle(touchpadlick_x3,touchpadlick_y3);}
+    touchpadlick_y3 =e.clientY-106;}
+    rectrangle(touchpadlick_x3,touchpadlick_y3);
     function rectrangle(touchpadlick_x3,touchpadlick_y3)
     {ctx3.beginPath(); 
     ctx3.strokeStyle = color3;
     ctx3.rect(touchpadlick_x3,touchpadlick_y3, 20, 40);
     ctx3.stroke();}
   
-    function clear(){ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-        ctx2.clearRect(0, 0, ctx2.canvas2.width, ctx2.canvas2.height);
-        ctx3.clearRect(0, 0, ctx3.canvas3.width, ctx3.canvas3.height);
-        console.log("HI"); }
-    
+    function clear(){ console.log("HI"); 
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        ctx2.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        ctx3.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    }      
 
  
 
